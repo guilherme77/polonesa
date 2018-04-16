@@ -124,7 +124,32 @@ int pop(pilha **cabeca)
 }
 
 void operation(pilha **cabeca, char op)
-{}
+{
+    int x, y res;
+
+    x=pop(cabeca);
+    y=pop(cabeca);
+
+    switch(op)
+    {
+        case '+':
+            res=y+x;
+            break;
+        case '-':
+            res=y-x;
+            break;
+        case '/':
+            res=y/x;
+            break;
+        case '*':
+            res=y*x;
+            break;
+    }
+    printf("Operacao: %d %c %d\n", y, op, x, r);
+    push(cabeca, r);
+
+    return;
+}
 void print(pilha **cabeca)
 {}
 void clear(pilha **cabeca)

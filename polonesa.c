@@ -83,22 +83,33 @@ int main(void)
     pilha *p1=NULL;
     char str[MAX];
     char *cha;
-
-    Prinft("Insira a equacao na forma polonesa inversa:\n");
+    
+    printf("\nOperadores Soma='+', subtracao='-', divisao='/', multiplicacao='*'\n");
+    Printf("Insira a equacao na forma polonesa inversa:\n");
     fgets(str, MAX, stdin);
     cha = strtok(str, " ");
 
     while(pch != NULL)
     {
-        if(operacoes)
+        if(*cha=='-' || *cha=='+' || *cha=='/' || *cha=='*')
+            operation(&p1, *cha);
+        else
+            push(&pl, atoi(cha));
+
+        cha=strtok(NULL, " ");
     }
 
 }
 
 void push(pilha **cabeca, int x)
-{}
+{
+    pilha *pl
+
+}
 int pop(pilha **cabeca)
-{}
+{
+    pilha *pl = *cabeca;
+}
 void operation(pilha **cabeca, char op)
 {}
 void print(pilha **cabeca)

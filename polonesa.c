@@ -69,6 +69,11 @@ typdef struct st_pilha
 
 /* ---------------------------------------------------------------------- */
 /* prototypes */
+void push(pilha **cabeca, int x);
+int pop(pilha **cabeca);
+void operation(pilha **cabeca, char op);
+void print(pilha **cabeca);
+void clear(pilha **cabeca);
 void help(void); /* print some help */
 void copyr(void); /* print version and copyright information */
 

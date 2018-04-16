@@ -59,48 +59,47 @@
 #define SBUFF 256 /* string buffer */
 #define MAX 256
 
-/* Typdefs */
+/* ---------------------------------------------------------------------- */
+/* prototypes */
 
-typdef struct st_pilha
+typedef struct st_pilha
 {
-    int g;
+    int c;
     struct st_pilha *prox;
 }pilha;
 
-/* ---------------------------------------------------------------------- */
-/* prototypes */
-void push(pilha **cabeca, int x);
-int pop(pilha **cabeca);
-void operation(pilha **cabeca, char op);
-void print(pilha **cabeca);
-void clear(pilha **cabeca);
+void push(pilha **, int);
+int pop(pilha **);
+void operation(pilha **, char);
+void print(pilha *);
+void clear(pilha **);
 void help(void); /* print some help */
 void copyr(void); /* print version and copyright information */
 
 /* ---------------------------------------------------------------------- */
 int main(void)
 {
-    pilha *p1=NULL;
     char str[MAX];
     char *cha;
+    pilha *p1 = NULL;
     
-    printf("\nOperadores Soma='+', subtracao='-', divisao='/', multiplicacao='*'\n");
-    Printf("Insira a equacao na forma polonesa inversa:\n");
+    //printf("\nOperadores Soma='+', subtracao='-', divisao='/', multiplicacao='*'\n");
+    printf("Insira a equacao na forma polonesa inversa:\n");
     fgets(str, MAX, stdin);
     cha = strtok(str, " ");
 
-    while(pch != NULL)
+    while(cha != NULL)
     {
         if(*cha=='-' || *cha=='+' || *cha=='/' || *cha=='*')
             operation(&p1, *cha);
         else
-            push(&pl, atoi(cha));
+            push(&p1, atoi(cha));
 
         cha=strtok(NULL, " ");
     }
 
-    printf("Resultado: %d\n", pl->c);
-    clear(&pl);
+    printf("Resultado: %d\n", p1->c);
+    clear(&p1);
 
     return 0;
 }
@@ -129,7 +128,7 @@ int pop(pilha **cabeca)
 
 void operation(pilha **cabeca, char op)
 {
-    int x, y res;
+    int x, y ,res;
 
     x=pop(cabeca);
     y=pop(cabeca);
@@ -149,14 +148,15 @@ void operation(pilha **cabeca, char op)
             res=y*x;
             break;
     }
-    printf("Operacao: %d %c %d\n", y, op, x, r);
-    push(cabeca, r);
+    printf("Operacao: %d %c %d \n", y, op, x, res);
+    push(cabeca, res);
 
     return;
 }
-void print(pilha **cabeca)
+
+void print(pilha *cabeca)
 {
-    piha *pl=cabeca;
+    pilha *pl=cabeca;
 
     printf("Pilha: ");
 
@@ -171,8 +171,8 @@ void print(pilha **cabeca)
 
 void clear(pilha **cabeca)
 {
-    pilha *pl¨=*cabeca;
-    pilha *plant=NULL;
+    pilha *pl = *cabeca;
+    pilha *plant = NULL;
 
     while(pl != NULL)
     {

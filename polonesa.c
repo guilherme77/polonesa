@@ -103,9 +103,14 @@ int main(void)
 
 void push(pilha **cabeca, int x)
 {
-    pilha *pl
+    pilha *pl;
 
+    pl= malloc(sizeof(pilha));
+    pl->c=x;
+    pl->prox=*cabeca;
+    *cabeca=pl;
 }
+
 int pop(pilha **cabeca)
 {
     pilha *pl = *cabeca;

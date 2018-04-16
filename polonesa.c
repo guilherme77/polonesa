@@ -83,7 +83,23 @@ int main(void)
     fgets(str, MAX, stdin);
     cha = strtok(str, " ");
 
+    while(pch != NULL)
+    {
+        if(operacoes)
+    }
+
 }
+
+void push(pilha **cabeca, int x)
+{}
+int pop(pilha **cabeca)
+{}
+void operation(pilha **cabeca, char op)
+{}
+void print(pilha **cabeca)
+{}
+void clear(pilha **cabeca)
+{}
 
 /* add more functions here */
 

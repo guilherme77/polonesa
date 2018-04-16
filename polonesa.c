@@ -114,7 +114,15 @@ void push(pilha **cabeca, int x)
 int pop(pilha **cabeca)
 {
     pilha *pl = *cabeca;
+    int x;
+
+    x=pl->c;
+    *cabeca=pl->prox;
+    
+    free(pl);
+    return x;
 }
+
 void operation(pilha **cabeca, char op)
 {}
 void print(pilha **cabeca)

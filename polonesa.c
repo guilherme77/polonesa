@@ -28,12 +28,12 @@
 /* ---------------------------------------------------------------------- */
 /* includes */
 
-#include <stdio.h> /* Standard I/O functions */
-#include <stdlib.h> /* Miscellaneous functions (rand, malloc, srand)*/
+#include <stdio.h>      /* Standard I/O functions */
+#include <stdlib.h>     /* Miscellaneous functions (rand, malloc, srand)*/
+#include <string.h>     /* Strings functions definitions */
 
 /* #include <time.h> */ /* Time and date functions */
 /* #include <math.h> */ /* Mathematics functions */
-/* #include <string.h> */ /* Strings functions definitions */
 
 /* ---------------------------------------------------------------------- */
 /* definitions */
@@ -57,6 +57,15 @@
 
 /* limits */
 #define SBUFF 256 /* string buffer */
+#define MAX 256
+
+/* Typdefs */
+
+typdef struct st_pilha
+{
+    int g;
+    struct st_pilha *prox;
+}pilha;
 
 /* ---------------------------------------------------------------------- */
 /* prototypes */
@@ -66,6 +75,14 @@ void copyr(void); /* print version and copyright information */
 /* ---------------------------------------------------------------------- */
 int main(void)
 {
+    pilha *p1=NULL;
+    char str[MAX];
+    char *cha;
+
+    Prinft("Insira a equacao na forma polonesa inversa:\n");
+    fgets(str, MAX, stdin);
+    cha = strtok(str, " ");
+
 }
 
 /* add more functions here */

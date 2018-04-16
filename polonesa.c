@@ -166,7 +166,18 @@ void print(pilha **cabeca)
 }
 
 void clear(pilha **cabeca)
-{}
+{
+    pilha *pl¨=*cabeca;
+    pilha *plant=NULL;
+
+    while(pl != NULL)
+    {
+        plant=pl;
+        pl=pl->prox;
+        free(plant);
+    }
+    return;
+}
 
 /* add more functions here */
 

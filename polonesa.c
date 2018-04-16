@@ -99,6 +99,10 @@ int main(void)
         cha=strtok(NULL, " ");
     }
 
+    printf("Resultado: %d\n", pl->c);
+    clear(&pl);
+
+    return 0;
 }
 
 void push(pilha **cabeca, int x)

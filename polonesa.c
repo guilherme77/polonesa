@@ -151,7 +151,20 @@ void operation(pilha **cabeca, char op)
     return;
 }
 void print(pilha **cabeca)
-{}
+{
+    piha *pl=cabeca;
+
+    printf("Pilha: ");
+
+    while(pl != NULL)
+    {
+        printf("%d ", pl->c);
+        pl=pl->prox;
+    }
+    printf("\n");
+
+}
+
 void clear(pilha **cabeca)
 {}
 
